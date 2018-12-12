@@ -1,0 +1,9 @@
+header {
+  background-color: #c7c0c0;
+  text-align: center;
+  width: -webkit-fill-available;
+  height:20px;
+}
+nav>a {
+  margin: 10px;
+}
