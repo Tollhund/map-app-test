@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { AppMapComponent } from './app-map/app-map.component';
 import { AppObjectsListComponent } from './app-objects-list/app-objects-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -29,7 +31,12 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB2mFjZVmnx0G60yTtJn0CKL_LvSdaQiNQ'
+    }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

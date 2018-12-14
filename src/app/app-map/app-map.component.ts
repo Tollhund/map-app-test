@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-map.component.css']
 })
 export class AppMapComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
