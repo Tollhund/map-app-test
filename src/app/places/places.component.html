@@ -1,0 +1,8 @@
+<h2>Objects on map</h2>
+<ul class="places">
+  <li *ngFor='let place of places'
+      (click)='onClickObj(place)'
+      [class.selected]="place === selectedPlace">
+    {{place.objType}}
+  </li>
+</ul>

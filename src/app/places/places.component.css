@@ -1,0 +1,35 @@
+.places {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 10em;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: green;
+}
+
+.places li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em .7em;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.places li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.places li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.places .text {
+  position: relative;
+  top: -3px;
+}
