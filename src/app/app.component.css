@@ -1,12 +1,18 @@
 #menu {
-    font-size:24px;
-    margin:30px;
-    text-align: right;
-    background-color: #efecec;
+  display: -webkit-inline-box;
+  font-size:24px;
+  margin:25px;
+  background-color: #efecec;
 }
 
 a {
   margin: 20px;
   text-decoration: none;
   color: #518677;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

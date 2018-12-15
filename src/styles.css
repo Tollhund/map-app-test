@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+h2, h3 {
+  color: #444;
+  font-family: Cambria, Georgia;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}

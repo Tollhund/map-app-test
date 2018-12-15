@@ -30,11 +30,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
     this.map.getLocation().subscribe(data => {
       console.log(data);
-      let mark;
       this.lat = data.latitude;
       this.lng = data.longitude;
-      mark = (this.lat, this.lng)
-      console.log(mark);
     })
   }
 

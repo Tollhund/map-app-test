@@ -1,0 +1,10 @@
+.log {
+  -webkit-appearance: textfield;
+  border-style: hidden;
+  font-size: large;
+  background-color: #EEE;
+}
+.sub {
+  border-style: solid;
+  font-size: large;
+}

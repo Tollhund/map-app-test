@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
+import { PlacesComponent } from './places/places.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainPageComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    PlacesComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
