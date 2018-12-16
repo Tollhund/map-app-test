@@ -1,11 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { MapService } from '../map.service';
-
-interface marker {
-	lat: number;
-	lng: number;
-}
+import { Marker } from '../marker';
 
 @Component({
   selector: 'app-main-page',
@@ -14,16 +10,12 @@ interface marker {
 })
 
 export class MainPageComponent implements OnInit {
+  markers: Marker[];
   zoom: number = 16;
   lat: string = '';
   lng: string = '';
   location: Object;
-  markers: marker[] = [
-    {
-      lat: Number("5"),
-      lng: Number("3")
-    }
-  ];
+
 
   constructor(private map: MapService) { }
 
@@ -38,6 +30,7 @@ export class MainPageComponent implements OnInit {
   mapClicked($event: MouseEvent) {
     console.log(this.markers);
     this.markers.push({
+      id: this.markers.length,
       lat: $event.coords.lat,
       lng: $event.coords.lng,
     });

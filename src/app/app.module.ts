@@ -5,8 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
-
+import { StorageServiceModule} from 'angular-webstorage-service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 import { MapService } from './map.service';
+
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginComponent } from './login/login.component';
@@ -33,11 +36,15 @@ const appRoutes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
+    StorageServiceModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB2mFjZVmnx0G60yTtJn0CKL_LvSdaQiNQ'
-    })
+    }),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
-  providers: [MapService],
+  providers: [MapService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
