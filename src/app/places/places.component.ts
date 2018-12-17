@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Place } from './place';
 import { PLACES } from './places-arr';
+//import { Marker } from '../marker';
+//import { MapsAPILoader, AgmMap } from '@agm/core';
+//declare var google: any;
+
+// interface PlaceOnMap {
+//   lat: number;
+//   lng: number;
+//   viewport?: Object;
+//   place_level_1?: string;
+//   marker?: Marker;
+// }
 
 @Component({
   selector: 'app-places',
@@ -15,8 +26,10 @@ export class PlacesComponent implements OnInit {
 
   ngOnInit() {
   }
-  onClickObj(place: Place): void {
+  onMouseOver(place: Place): void {
     this.selectedPlace = place;
   }
-
+  onPlaceClick(): void {
+    console.log('Hooooooya');
+  }
 }

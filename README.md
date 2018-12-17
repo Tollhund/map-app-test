@@ -4,6 +4,9 @@ this branch exclusively for Angular4
 the main branch is supporting angular 7
 but will be the same as this one.
 
+## interface
+Markers will disappear by clicking on one of them. 
+
 # MapAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.10.

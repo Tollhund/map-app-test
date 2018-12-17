@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MouseEvent } from '@agm/core';
+import {LocationService } from '../location.service';
 import { MapService } from '../map.service';
 import { Marker } from '../marker';
 
@@ -14,19 +15,25 @@ export class MainPageComponent implements OnInit {
   zoom: number = 16;
   lat: string = '';
   lng: string = '';
-  location: Object;
+  //location: Location;
+  visible: boolean;
 
-
-  constructor(private map: MapService) { }
+  constructor(private mapService: MapService,
+              private locationService: LocationService) { }
 
   ngOnInit() {
-    this.map.getLocation().subscribe(data => {
+    this.locationService.getLocation().subscribe(data => {
       console.log(data);
       this.lat = data.latitude;
       this.lng = data.longitude;
-    })
-  }
+    });
 
+    this.getMarkers()
+  }
+  getMarkers(): void {
+    this.mapService.getMarkers()
+    .subscribe(markers => this.markers = markers)
+  }
   mapClicked($event: MouseEvent) {
     console.log(this.markers);
     this.markers.push({
@@ -35,4 +42,18 @@ export class MainPageComponent implements OnInit {
       lng: $event.coords.lng,
     });
   }
-}
+  markerClicked($event: MouseEvent) {
+    this.visible = false;
+  }
+
+  showMarks($event: MouseEvent) {
+    this.visible = true;
+  }
+  saveMarks(lat: number, id: number, lng: number): void {
+    this.mapService.addMarker({lat, lng, id} as Marker)
+        .subscribe(marker => {
+          this.markers.push(marker);
+        })
+        console.log('Markers saved to DB');
+    }
+  }

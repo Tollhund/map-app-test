@@ -1,4 +1,5 @@
 .places {
+  display: inline;
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
@@ -11,6 +12,7 @@
 }
 
 .places li {
+  display: inline;
   cursor: pointer;
   position: relative;
   left: 0;

@@ -8,3 +8,8 @@
   border-style: solid;
   font-size: large;
 }
+
+.sub:hover {
+  color: #607D8B;
+  background-color: #BBD8DC;
+}

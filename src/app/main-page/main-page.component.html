@@ -1,10 +1,22 @@
-<agm-map [latitude]="lat" [longitude]="lng" [zoom] = "zoom" (mapClick)="mapClicked($event)">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  <agm-marker [latitude]="m.lat" [longitude]="m.lng" *ngFor="let m of markers; let i = index"></agm-marker>
+<agm-map [latitude]="lat"
+          [longitude]="lng"
+          [zoom] = "zoom"
+          (mapClick)="mapClicked($event)">
+  <agm-marker class="user-click"
+              [latitude]="lat"
+              [longitude]="lng">
+  </agm-marker>
+  <agm-marker class="user"
+              [latitude]="m.lat"
+              [longitude]="m.lng"
+              *ngFor="let m of markers; let i = index"
+              [visible] = "visible"
+              (markerClick)="markerClicked($event)">
+  </agm-marker>
 </agm-map>
 <div id="buttons">
-  <button (click)="saveMarks($event)">Save</button>
-  <button (click)="showMarks($event)">Show</button>
+  <button class="map-button" (click)="saveMarks($event)">Save</button>
+  <button class="map-button" (click)="showMarks()">Show</button>
 </div>
 
 <app-places></app-places>
